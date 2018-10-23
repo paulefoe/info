@@ -3,6 +3,7 @@ version: '3.2'
 services:
   postgres:
       image: postgres:10
+      container_name: info_postgres
       volumes:
       - "/var/run/postgres/postgres.sock:/var/run/postgres/postgres.sock"
       - "dbdata:/var/lib/postgresql/data"
@@ -16,6 +17,7 @@ services:
 
   info:
     build: .
+    container_name: info
     volumes:
       - ./:/app
     command: gunicorn info.app:app -b :8080 --worker-class aiohttp.GunicornWebWorker --reload --access-logfile -

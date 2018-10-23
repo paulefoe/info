@@ -23,6 +23,8 @@ def read_version():
 
 install_requires = [
     'aiohttp==3.3.2',
+    'aiohttp_cors==0.7.0',
+    'alembic==0.9.10',
     'aiopg==0.14.0',
     'SQLAlchemy==1.2.9',
     'psycopg2-binary==2.7.5',
