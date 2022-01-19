@@ -8,7 +8,7 @@ WORKDIR /app
 ADD . /app
 
 # Install any needed packages specified in requirements.txt
-RUN python setup.py develop
+RUN python -m pip install --upgrade pip wheel setuptools && pip install -e .
 
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
